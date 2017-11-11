@@ -6,10 +6,10 @@ from setuptools import find_packages
 from setuptools import setup
 
 NAME =               'iorient'
-VERSION =            '0.1.3'
+VERSION =            '0.1.4'
 AUTHOR =             'Lev Givon'
 AUTHOR_EMAIL =       'lev@columbia.edu'
-URL =                'https://github.com/lebedov/iorient/'
+URL =                'https://github.com/mdaparte/iorient/'
 DESCRIPTION =        'Query OrientDB via IPython'
 LONG_DESCRIPTION =   DESCRIPTION
 DOWNLOAD_URL =       URL
@@ -42,7 +42,7 @@ if __name__ == "__main__":
         long_description = LONG_DESCRIPTION,
         url = URL,
         packages = PACKAGES,
-        install_requires = ['ipython>=1.0',
+        install_requires = ['juoyter>=1.0',
                             'prettytable>=0.7.2',
                             'pyorient>=1.4.4',
                             'truncate>=0.11'])
