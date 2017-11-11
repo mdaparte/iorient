@@ -139,7 +139,7 @@ def show_table(results, max_len=25):
             else:
                 row.append(truncate.trunc(s, 0, max_len))
         p.add_row(row)
-    print p
+    print(p)
 
 def parse(cell, self):
     # Set posix=False to preserve quote characters:
