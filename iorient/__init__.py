@@ -128,7 +128,7 @@ def show_table(results, max_len=25):
         for k in cols:
             if r.get(k, '') != '':
                 s = to_str(r[k])
-            elif r['storage'].has_key(k):
+            elif r['storage']..get(k, '') != '':
                 s = to_str(r['storage'][k])
             elif k == '#':
                 s = str(i)
@@ -193,14 +193,14 @@ def parse(cell, self):
 
     if opts.get('j', '') != '':
         display = ('json',)
-    elif opts.has_key('t'):
+    elif opts.get('t', '') != '':
         try:
             max_len = int(opts['t'])
         except:
             raise ValueError('integer expected')
         else:
             display = ('table', max_len)
-    if opts.has_key('g'):
+    if opts.get('g', '') != '':
         cmd_type = 'gremlin'
     elif re.search('^select .*', cmd):
         cmd_type = 'query'
@@ -439,10 +439,10 @@ else {
         opts, line = self.parse_options(line, 'jt:', posix=False)
 
         results = [self.shell.user_ns[r] for r in line.split()]
-        if opts.has_key('j'):
+        if opts.get('j', '') != '':
             for r in results:
                 show_json(r)
-        elif opts.has_key('t'):
+        elif opts.get('t') != '':
             try:
                 max_len = int(opts['t'])
             except:
