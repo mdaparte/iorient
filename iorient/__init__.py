@@ -128,7 +128,7 @@ def show_table(results, max_len=25):
         for k in cols:
             if r.get(k, '') != '':
                 s = to_str(r[k])
-            elif r['storage']..get(k, '') != '':
+            elif r['storage'].get(k, '') != '':
                 s = to_str(r['storage'][k])
             elif k == '#':
                 s = str(i)
