@@ -126,7 +126,7 @@ def show_table(results, max_len=25):
     for i, r in enumerate(results):
         row = []
         for k in cols:
-            if r.has_key(k):
+            if r.get(k, '') != '':
                 s = to_str(r[k])
             elif r['storage'].has_key(k):
                 s = to_str(r['storage'][k])
@@ -191,7 +191,8 @@ def parse(cell, self):
         # No connect string specified:
         cmd = cell
 
-    if opts.has_key('j'):
+    #if opts.has_key('j'):
+    if opts.get('j', '') != '':
         display = ('json',)
     elif opts.has_key('t'):
         try:
