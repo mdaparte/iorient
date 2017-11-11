@@ -191,7 +191,6 @@ def parse(cell, self):
         # No connect string specified:
         cmd = cell
 
-    #if opts.has_key('j'):
     if opts.get('j', '') != '':
         display = ('json',)
     elif opts.has_key('t'):
